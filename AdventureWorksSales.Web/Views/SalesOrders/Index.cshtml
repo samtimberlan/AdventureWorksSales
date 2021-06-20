@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AdventureWorksSales.Core.Data.SalesOrder>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarrierTrackingNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarrierTrackingNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.SalesOrderDetailID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.SalesOrderDetailID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SalesOrderDetailID })
+        </td>
+    </tr>
+}
+
+</table>
